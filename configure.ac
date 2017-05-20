@@ -104,6 +104,7 @@ AS_HELP_STRING([--enable-long-double], [Enable the use of long double for jit_nf
 dnl Checks for programs.
 AC_PROG_AWK
 AC_PROG_CC
+AX_PROG_CC_FOR_BUILD
 AC_PROG_CXX
 AM_PROG_AR
 AC_PROG_INSTALL

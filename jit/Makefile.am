@@ -97,31 +97,31 @@ jit-interp-labels.h: $(top_builddir)/include/jit/jit-opcode.h \
 
 jit-rules-x86.lo: jit-rules-x86.inc
 
-jit-rules-x86.inc: jit-rules-x86.ins $(top_builddir)/tools/gen-rules$(EXEEXT)
-	$(top_builddir)/tools/gen-rules$(EXEEXT) $(srcdir)/jit-rules-x86.ins \
+jit-rules-x86.inc: jit-rules-x86.ins $(top_builddir)/tools/gen-rules$(BUILD_EXEEXT)
+	$(top_builddir)/tools/gen-rules$(BUILD_EXEEXT) $(srcdir)/jit-rules-x86.ins \
 		>jit-rules-x86.inc
 
 jit-rules-arm.lo: jit-rules-arm.inc
 
-jit-rules-arm.inc: jit-rules-arm.ins $(top_builddir)/tools/gen-rules$(EXEEXT)
-	$(top_builddir)/tools/gen-rules$(EXEEXT) $(srcdir)/jit-rules-arm.ins \
+jit-rules-arm.inc: jit-rules-arm.ins $(top_builddir)/tools/gen-rules$(BUILD_EXEEXT)
+	$(top_builddir)/tools/gen-rules$(BUILD_EXEEXT) $(srcdir)/jit-rules-arm.ins \
 		>jit-rules-arm.inc
 
 jit-rules-x86-64.lo: jit-rules-x86-64.inc
 
-jit-rules-x86-64.inc: jit-rules-x86-64.ins $(top_builddir)/tools/gen-rules$(EXEEXT)
-	$(top_builddir)/tools/gen-rules$(EXEEXT) $(srcdir)/jit-rules-x86-64.ins \
+jit-rules-x86-64.inc: jit-rules-x86-64.ins $(top_builddir)/tools/gen-rules$(BUILD_EXEEXT)
+	$(top_builddir)/tools/gen-rules$(BUILD_EXEEXT) $(srcdir)/jit-rules-x86-64.ins \
 		>jit-rules-x86-64.inc
 
 jit-opcode.c: jit-opcodes.ops
-	$(top_builddir)/tools/gen-ops -T $(srcdir)/jit-opcodes.ops >jit-opcode.c
+	$(top_builddir)/tools/gen-ops$(BUILD_EXEEXT) -T $(srcdir)/jit-opcodes.ops >jit-opcode.c
 
 jit-interp-opcode.h: jit-interp-opcodes.ops
-	$(top_builddir)/tools/gen-ops -H $(srcdir)/jit-interp-opcodes.ops \
+	$(top_builddir)/tools/gen-ops$(BUILD_EXEEXT) -H $(srcdir)/jit-interp-opcodes.ops \
 		>jit-interp-opcode.h
 
 jit-interp-opcode.c: jit-interp-opcodes.ops
-	$(top_builddir)/tools/gen-ops -T $(srcdir)/jit-interp-opcodes.ops \
+	$(top_builddir)/tools/gen-ops$(BUILD_EXEEXT) -T $(srcdir)/jit-interp-opcodes.ops \
 		>jit-interp-opcode.c
 
 CLEANFILES = \

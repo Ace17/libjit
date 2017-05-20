@@ -1,3 +1,8 @@
+2017-05-20  Sebastien Alaiwan <sebastien.alaiwan@gmail.com>
+
+	* configure.ac, tools/Makefile.am, jit/Makefile.am: use CC_FOR_BUILD to
+	generate native tools.
+
 2017-05-15  Sebastien Alaiwan <sebastien.alaiwan@gmail.com>
 
 	* jit/jit-opcodes: include jit/jit-opcode-compat.h instead of
